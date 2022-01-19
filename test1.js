@@ -7,7 +7,7 @@
 //
 //
 
-const apiKey = '9d2a4c1e63d8299886a4e4288c001d68';
+const apiKey = **OpenWeatherMap API Key**;
 let apiResults;
 
 let apiGeoloc;
