@@ -1,0 +1,44 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'colors';
+
+.hourly-weather {
+  grid-area: hourly;
+  display: flex;
+  overflow: hidden;
+  background-color: color.adjust(colors.$main-color, $alpha: -0.9);
+
+  .arrow-left,
+  .arrow-right {
+    height: 100%;
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .hourly-weather__hours {
+    width: 100%;
+    margin: 0 2rem;
+    display: flex;
+
+    .hourly-weather__hour {
+      width: calc(100% / 12);
+      min-width: 10vh;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      // border-right: 0.05rem solid color.adjust(colors.$main-color, $alpha: -0.5);
+      border-right: 0.05rem solid colors.$gradient-inner;
+
+      &:last-of-type {
+        border-right: none;
+      }
+
+      img {
+        width: 80%;
+      }
+    }
+  }
+}

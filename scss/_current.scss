@@ -1,0 +1,38 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'colors';
+
+.current-weather {
+  grid-area: current;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .current-weather__img {
+    width: 50%;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .current-weather__info {
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    .current-weather__temp {
+      font-size: 6rem;
+    }
+
+    .current-weather__detail {
+      font-size: 2.5rem;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'colors';
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background: colors.$bg-color;
+  background: radial-gradient(
+    circle,
+    colors.$gradient-inner 33%,
+    colors.$gradient-inner 66%,
+    colors.$gradient-outer 100%
+  );
+  color: colors.$main-color;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid:
+    'header' 6.25vh
+    'localisation' min-content
+    'current' min-content
+    'hourly' 18.75vh
+    'daily' 62.5vh
+    'footer' 6.25vh;
+
+  sup {
+    font-size: 1.3rem;
+    position: relative;
+    top: -0.5rem;
+  }
+
+  header {
+    grid-area: header;
+    padding: 1rem;
+    align-items: center;
+    background-color: colors.$main-color;
+    color: colors.$secondary-color;
+    text-align: center;
+    text-transform: uppercase;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  footer {
+    grid-area: footer;
+    background-color: colors.$main-color;
+  }
+}

@@ -1,0 +1,5 @@
+# Ignore NPM files
+node_modules/
+
+# Ignore API keys file
+api_keys.md

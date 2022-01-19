@@ -1,0 +1,79 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'reset';
+@use 'main-container';
+@use 'localisation';
+@use 'current';
+@use 'hourly';
+@use 'daily';
+
+@media (max-height: 550px) and (orientation: landscape) {
+  .container {
+    grid:
+      'header' 6.25vw
+      'localisation' min-content
+      'current' min-content
+      'hourly' 18.75vw
+      'daily' 62.5vw
+      'footer' 6.25vw;
+  }
+}
+
+// @media (min-width: 551px) and (max-width: 770px) {
+//   .container {
+//     grid:
+//       'header header' 6.25vh
+//       'localisation localisation' min-content
+//       'current hourly' min-content
+//       // 'hourly' 18.75vh
+//       'daily daily' 62.5vh
+//       'footer footer' 6.25vh
+//       / 70% 30%;
+//   }
+
+//   .hourly-weather {
+//     .arrow-left,
+//     .arrow-right {
+//       display: none;
+//     }
+
+//     .hourly-weather__hours {
+//       flex-direction: column;
+//       width: 100%;
+
+//       .hourly-weather__hour {
+//         flex-direction: row;
+//         width: 100%;
+
+//         img {
+//           width: 40%;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@media (min-width: 551px) and (max-width: 770px) {
+  .container {
+    grid:
+      'header' 4vh
+      'localisation' minmax(6vh, min-content)
+      'current' 27vh
+      'hourly' 12.5vh
+      'daily' 44.5vh
+      'footer' 4vh;
+  }
+
+  .current-weather {
+    .current-weather__img {
+      height: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .current-weather__info {
+      align-items: center;
+    }
+  }
+}

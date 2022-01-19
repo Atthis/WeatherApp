@@ -1,0 +1,61 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'colors';
+
+.daily-weather {
+  grid-area: daily;
+
+  // .daily-weather__header {
+  //   width: 100%;
+  //   height: 5%;
+  //   display: grid;
+  //   grid: '. . temp' / 40% 20% 40%;
+  //   justify-content: space-around;
+  //   align-items: center;
+
+  //   .hour__temp {
+  //     grid-area: temp;
+  //     margin: auto;
+  //     font-size: 1.5rem;
+  //     font-weight: 200;
+  //   }
+  // }
+
+  .daily-weather__day {
+    width: 100%;
+    height: calc(100% / 7);
+    display: grid;
+    grid: 'day weather temp' / 40% 20% 40%;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.05rem solid color.adjust(colors.$main-color, $alpha: -0.8);
+
+    .day {
+      grid-area: day;
+      margin: auto;
+    }
+    .day__icon {
+      grid-area: weather;
+      margin: auto;
+    }
+    .day__temp {
+      grid-area: temp;
+      margin: auto;
+      font-weight: 200;
+
+      .min-temp {
+        color: colors.$blue-temp;
+        font-weight: 600;
+      }
+
+      .max-temp {
+        color: colors.$red-temp;
+        font-weight: 600;
+      }
+    }
+  }
+
+  img {
+    width: 50px;
+  }
+}

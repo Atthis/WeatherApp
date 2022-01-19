@@ -1,0 +1,99 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #fff;
+  --secondary-color: rgb(51, 176, 175);
+}
+/*
+main background : 
+background: rgb(51,176,175);
+background: radial-gradient(circle, rgba(51,176,175,1) 47%, rgba(9,143,142,1) 100%); 
+*/
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background: rgb(51, 176, 175);
+  background: radial-gradient(
+    circle,
+    rgb(115, 192, 192) 23%,
+    rgb(115, 192, 192) 73%,
+    rgba(9, 143, 142, 1) 100%
+  );
+  color: var(--main-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+}
+
+.container {
+  width: 100vw;
+}
+
+header {
+  padding: 1rem;
+  align-items: center;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+.localisation {
+  padding: 1rem;
+  display: grid;
+  grid-template: 1fr auto / repeat(5, 1fr);
+  position: relative;
+}
+
+.localisation h2 {
+  display: block;
+  grid-area: 1/1/2/5;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+.localisation input#menu-loc {
+  display: none;
+  z-index: -1;
+}
+
+.localisation label {
+  grid-area: 1/5/2/-1;
+  width: 100%;
+  font-size: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.localisation label i {
+  transition: color 0.2s ease-in-out;
+}
+.localisation label:hover i {
+  color: #070707;
+}
+
+.localisation .loc-form {
+  grid-area: 2/1/-1/-1;
+  width: 100%;
+  max-height: 0;
+  background-color: brown;
+  overflow: hidden;
+}
+
+.localisation input:checked ~ .loc-form {
+  max-height: 100vh;
+}

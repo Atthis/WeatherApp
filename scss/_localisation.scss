@@ -1,0 +1,117 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'colors';
+
+.localisation {
+  grid-area: localisation;
+  padding: 1rem;
+  display: grid;
+  grid-template: 1fr auto / repeat(5, 1fr);
+  align-items: center;
+  border-bottom: 1px solid
+    color.adjust(colors.$secondary-color, $lightness: -10%);
+
+  input#menu-loc {
+    display: none;
+    z-index: -1;
+
+    &:checked {
+      ~ .loc-form {
+        max-height: 100%;
+        margin-top: 1rem;
+      }
+
+      ~ .localisation__title .fa-caret-right {
+        transform: rotate(90deg);
+        transform-origin: initial;
+
+        :hover {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  label.localisation__title {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    grid-area: 1/1/2/-1;
+    display: grid;
+    grid-template: 1fr / 1fr 6fr 1fr;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    color: colors.$main-color;
+    transition: color 0.15s ease-in-out;
+    text-shadow: color.adjust(colors.$secondary-color, $lightness: -20%) 0 0 5px;
+
+    h2 {
+      display: block;
+      grid-area: 1/2/-1/3;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    span.localisation__country {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 200;
+      overflow-wrap: break-word;
+    }
+
+    i.fa-map-marker-alt {
+      grid-area: 1/1/-1/2;
+      justify-self: end;
+      font-size: 1.5em;
+    }
+
+    i.fa-caret-right {
+      grid-area: 1/3/-1/4;
+      justify-self: center;
+      font-size: 1.5em;
+      transition: transform 0.2s;
+    }
+
+    &:hover {
+      color: color.adjust(colors.$main-color, $lightness: -10%);
+    }
+
+    &:hover i.fa-caret-right {
+      transform: rotate(90deg);
+    }
+  }
+
+  .loc-form {
+    grid-area: 2/1/-1/-1;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.35s;
+    z-index: -1;
+
+    input {
+      margin: 0 1rem 0 0;
+
+      &:nth-of-type(1) {
+        grid-area: 1/1/2/5;
+        margin-bottom: 0.5rem;
+      }
+      &:nth-of-type(2) {
+        grid-area: 2/1/-1/5;
+        margin-top: 0.5rem;
+      }
+    }
+
+    button {
+      grid-area: 1/5/-1/-1;
+    }
+
+    // PREVOIR DE STYLISER LES INPUTS VILLE ET PAYS AINSI QUE LE BOUTON
+  }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/84cfa67558.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Votre météo</h1>
+      </header>
+      <section class="localisation">
+        <input type="checkbox" name="menu-loc" id="menu-loc" />
+        <label for="menu-loc" class="localisation__title">
+          <i class="fas fa-map-marker-alt"></i>
+          <h2 class="localistation__city">
+            <span class="localisation__city">Barcelone</span> <br />
+            <span class="localisation__country">Espagne</span>
+          </h2>
+          <i class="fas fa-caret-right"></i>
+        </label>
+        <div class="loc-form">
+          <input type="text" name="city" id="city" placeholder="ville" />
+          <input type="text" name="country" id="country" placeholder="pays" />
+          <button class="search-loc">Valider</button>
+        </div>
+      </section>
+
+      <!-- temps actuel -->
+      <section class="current-weather">
+        <div class="current-weather__img">
+          <img src="ressources/jour/10d.svg" alt="" />
+        </div>
+        <div class="current-weather__info">
+          <p class="current-weather__temp">16°C</p>
+          <p class="current-weather__detail">Ensoleillé</p>
+        </div>
+      </section>
+      <!-- temps par heures sur 12h -->
+      <section class="hourly-weather">
+        <div class="arrow-left">
+          <p>&lt;</p>
+        </div>
+        <div class="hourly-weather__hours">
+          <div class="hourly-weather__hour">
+            <p class="hour">0h</p>
+            <img src="ressources/jour/01d.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">1h</p>
+            <img src="ressources/jour/02d.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">2h</p>
+            <img src="ressources/jour/03d.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">3h</p>
+            <img src="ressources/jour/04d.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">4h</p>
+            <img src="ressources/jour/09d.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">5h</p>
+            <img src="ressources/jour/11d.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">6h</p>
+            <img src="ressources/jour/13d.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">7h</p>
+            <img src="ressources/jour/50d.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">8h</p>
+            <img src="ressources/nuit/01n.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">9h</p>
+            <img src="ressources/nuit/09n.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">10h</p>
+            <img src="ressources/nuit/13n.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+          <div class="hourly-weather__hour">
+            <p class="hour">11h</p>
+            <img src="ressources/nuit/50n.svg" alt="" class="hour__icon" />
+            <p class="hour__temp">15°<sup>c</sup></p>
+          </div>
+        </div>
+        <div class="arrow-right">
+          <p>&gt;</p>
+        </div>
+      </section>
+      <!-- temps par jour sur 7 jours -->
+      <section class="daily-weather">
+        <!-- <div class="daily-weather__header">
+          <p class="hour__temp">min / max</p>
+        </div> -->
+        <div class="daily-weather__day">
+          <p class="day">Lundi</p>
+          <img src="ressources/jour/01d.svg" alt="" class="day__icon" />
+          <p class="day__temp">
+            <span class="min-temp">15°<sup>c</sup></span> |
+            <span class="max-temp">24°<sup>c</sup></span>
+          </p>
+        </div>
+        <div class="daily-weather__day">
+          <p class="day">Mardi</p>
+          <img src="ressources/jour/02d.svg" alt="" class="day__icon" />
+          <p class="day__temp">
+            <span class="min-temp">15°<sup>c</sup></span> |
+            <span class="max-temp">24°<sup>c</sup></span>
+          </p>
+        </div>
+        <div class="daily-weather__day">
+          <p class="day">Mercredi</p>
+          <img src="ressources/jour/03d.svg" alt="" class="day__icon" />
+          <p class="day__temp">
+            <span class="min-temp">15°<sup>c</sup></span> |
+            <span class="max-temp">24°<sup>c</sup></span>
+          </p>
+        </div>
+        <div class="daily-weather__day">
+          <p class="day">Jeudi</p>
+          <img src="ressources/jour/09d.svg" alt="" class="day__icon" />
+          <p class="day__temp">
+            <span class="min-temp">15°<sup>c</sup></span> |
+            <span class="max-temp">24°<sup>c</sup></span>
+          </p>
+        </div>
+        <div class="daily-weather__day">
+          <p class="day">Vendredi</p>
+          <img src="ressources/jour/10d.svg" alt="" class="day__icon" />
+          <p class="day__temp">
+            <span class="min-temp">15°<sup>c</sup></span> |
+            <span class="max-temp">24°<sup>c</sup></span>
+          </p>
+        </div>
+        <div class="daily-weather__day">
+          <p class="day">Samedi</p>
+          <img src="ressources/jour/13d.svg" alt="" class="day__icon" />
+          <p class="day__temp">
+            <span class="min-temp">15°<sup>c</sup></span> |
+            <span class="max-temp">24°<sup>c</sup></span>
+          </p>
+        </div>
+        <div class="daily-weather__day">
+          <p class="day">Dimanche</p>
+          <img src="ressources/jour/50d.svg" alt="" class="day__icon" />
+          <p class="day__temp">
+            <span class="min-temp">15°<sup>c</sup></span> |
+            <span class="max-temp">24°<sup>c</sup></span>
+          </p>
+        </div>
+      </section>
+      <footer>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </footer>
+
+      <script src="app.js"></script>
+    </div>
+  </body>
+</html>
