@@ -2,4 +2,7 @@
 node_modules/
 
 # Ignore API keys file
-api_keys.md
+api_keys.js
+
+#ignore notebook file
+infos.md

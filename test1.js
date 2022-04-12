@@ -7,7 +7,9 @@
 //
 //
 
-const apiKey = **OpenWeatherMap API Key**;
+import {APIKeys} from '/api_keys.js';
+
+const apiKey = APIKeys.OpenWeather;
 let apiResults;
 
 let apiGeoloc;
@@ -15,7 +17,7 @@ let cityData;
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
-    (position) => {
+    position => {
       let lon = position.coords.longitude;
       let lat = position.coords.latitude;
 
